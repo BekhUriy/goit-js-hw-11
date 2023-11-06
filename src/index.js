@@ -60,7 +60,7 @@ const displayImages = images => {
   lightbox.refresh(); // Оновлюємо галерею після додавання нових зображень
   loadMoreBtn.style.display = 'block'; // Показуємо кнопку "Load more" після завантаження зображень
 };
-gallery.innerHTML = '';
+
 searchForm.addEventListener('submit', async e => {
   e.preventDefault();
   const searchQuery = document.querySelector("input[name='searchQuery']").value;
@@ -88,26 +88,14 @@ loadMoreBtn.addEventListener('click', async () => {
 
   if (images.length > 0) {
     displayImages(images);
-    page = 1; // Переходимо на наступну сторінку для пагінації
+    page++; // Переходимо на наступну сторінку для пагінації
   } else {
     loadMoreBtn.style.display = 'none';
     alert("We're sorry, but you've reached the end of search results.");
-    loadMoreBtn.style.display = 'none';
+    selectElement.addEventListener('change', event => {
+      const selectedBreedId = event.target.value;
+      showCatInfo(selectedBreedId);
+      page = 1; // Скидаємо номер сторінки при зміні пошукового запиту
+    });
   }
 });
-// const cardHeight = document
-//   .querySelector('.gallery')
-//   .firstElementChild.getBoundingClientRect().height;
-
-// window.addEventListener('scroll', () => {
-//   const scrollY = window.scrollY;
-//   const windowHeight = window.innerHeight;
-//   const contentHeight = document.body.scrollHeight;
-
-//   if (scrollY + windowHeight >= contentHeight - cardHeight) {
-//     const searchQuery = document.querySelector(
-//       "input[name='searchQuery']"
-//     ).value;
-//     fetchAndDisplayImages(searchQuery);
-//   }
-// });
