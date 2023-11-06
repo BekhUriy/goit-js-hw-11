@@ -56,6 +56,7 @@ const displayImages = images => {
   });
 
   lightbox.refresh(); // Оновлюємо галерею після додавання нових зображень
+  loadMoreBtn.style.display = 'block'; // Показуємо кнопку "Load more" після завантаження зображень
 };
 
 searchForm.addEventListener('submit', async e => {
@@ -69,6 +70,7 @@ searchForm.addEventListener('submit', async e => {
   if (images.length > 0) {
     displayImages(images);
     page = 2; // Переходимо на наступну сторінку для пагінації
+    loadMoreBtn.style.display = 'block'; // Показуємо кнопку "Load more"
   } else {
     alert(
       'Sorry, there are no images matching your search query. Please try again.'

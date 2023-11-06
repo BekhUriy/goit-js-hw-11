@@ -67,7 +67,7 @@ button:hover {
 }
 
 .load-more {
-  display: block;
+  display: none;
   margin: 0 auto;
   padding: 10px 20px;
   background-color: #28a745;
