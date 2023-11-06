@@ -66,6 +66,7 @@ searchForm.addEventListener('submit', async e => {
   const searchQuery = document.querySelector("input[name='searchQuery']").value;
 
   gallery.innerHTML = ''; // Очищаємо галерею перед новим пошуком
+  page = 1;
 
   const images = await fetchImages(searchQuery);
 
@@ -78,7 +79,6 @@ searchForm.addEventListener('submit', async e => {
       'Sorry, there are no images matching your search query. Please try again.'
     );
     loadMoreBtn.style.display = 'none';
-    gallery.innerHTML = '';
   }
 });
 
