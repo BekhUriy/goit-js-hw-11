@@ -12,12 +12,12 @@ axios.defaults.params = {
   per_page: 40, // Кількість зображень на сторінці
 };
 
-const searchForm = document.querySelector('#search-form');
+const searchForm = document.querySelector('.search-form');
 const gallery = document.querySelector('.gallery');
 const loadMoreBtn = document.querySelector('.load-more');
 
 let page = 1; // Початкова сторінка для пагінації
-
+gallery.innerHTML = '';
 const fetchImages = async searchQuery => {
   try {
     const response = await axios.get('https://pixabay.com/api/', {
@@ -58,7 +58,7 @@ const displayImages = images => {
   lightbox.refresh(); // Оновлюємо галерею після додавання нових зображень
   loadMoreBtn.style.display = 'block'; // Показуємо кнопку "Load more" після завантаження зображень
 };
-
+gallery.innerHTML = '';
 searchForm.addEventListener('submit', async e => {
   e.preventDefault();
   const searchQuery = document.querySelector("input[name='searchQuery']").value;
@@ -75,6 +75,8 @@ searchForm.addEventListener('submit', async e => {
     alert(
       'Sorry, there are no images matching your search query. Please try again.'
     );
+    loadMoreBtn.style.display = 'none';
+    gallery.innerHTML = '';
   }
 });
 
@@ -84,9 +86,10 @@ loadMoreBtn.addEventListener('click', async () => {
 
   if (images.length > 0) {
     displayImages(images);
-    page++; // Переходимо на наступну сторінку для пагінації
+    page = 1; // Переходимо на наступну сторінку для пагінації
   } else {
     loadMoreBtn.style.display = 'none';
     alert("We're sorry, but you've reached the end of search results.");
+    loadMoreBtn.style.display = 'none';
   }
 });
