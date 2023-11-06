@@ -15,9 +15,11 @@ axios.defaults.params = {
 const searchForm = document.querySelector('.search-form');
 const gallery = document.querySelector('.gallery');
 const loadMoreBtn = document.querySelector('.load-more');
+loadMoreBtn.style.display = 'none';
 
 let page = 1; // Початкова сторінка для пагінації
 gallery.innerHTML = '';
+
 const fetchImages = async searchQuery => {
   try {
     const response = await axios.get('https://pixabay.com/api/', {

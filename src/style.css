@@ -67,10 +67,10 @@ button:hover {
 }
 
 .load-more {
-  display: none;
+  /* display: block; */
   margin: 0 auto;
   padding: 10px 20px;
-  background-color: #28a745;
+  background-color: #f1f5f2;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -78,7 +78,11 @@ button:hover {
 }
 
 .load-more:hover {
-  background-color: #218838;
+  background-color: #b6b6b6;
+}
+
+.is-hidden {
+  display: none;
 }
 
 .error-message {
