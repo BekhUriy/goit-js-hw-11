@@ -7,12 +7,17 @@ body {
 
 .search-form {
   text-align: center;
-  margin-bottom: 20px;
+    display: flex;
+    margin-bottom: 20px;
+    position: fixed;
+    width: 100%;
+    justify-content: space-around;
 }
 
 .search-block {
   display: flex;
   align-items: center;
+  position: fixed;
 }
 
 .searchQuery {
