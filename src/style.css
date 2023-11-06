@@ -70,7 +70,7 @@ button:hover {
   /* display: block; */
   margin: 0 auto;
   padding: 10px 20px;
-  background-color: #f1f5f2;
+  background-color: #81ec9c;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -78,7 +78,7 @@ button:hover {
 }
 
 .load-more:hover {
-  background-color: #b6b6b6;
+  background-color: rgb(45, 49, 120), 182);
 }
 
 .is-hidden {

@@ -95,3 +95,19 @@ loadMoreBtn.addEventListener('click', async () => {
     loadMoreBtn.style.display = 'none';
   }
 });
+// const cardHeight = document
+//   .querySelector('.gallery')
+//   .firstElementChild.getBoundingClientRect().height;
+
+// window.addEventListener('scroll', () => {
+//   const scrollY = window.scrollY;
+//   const windowHeight = window.innerHeight;
+//   const contentHeight = document.body.scrollHeight;
+
+//   if (scrollY + windowHeight >= contentHeight - cardHeight) {
+//     const searchQuery = document.querySelector(
+//       "input[name='searchQuery']"
+//     ).value;
+//     fetchAndDisplayImages(searchQuery);
+//   }
+// });
