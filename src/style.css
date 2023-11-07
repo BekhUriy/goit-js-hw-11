@@ -9,7 +9,6 @@ body {
   text-align: center;
     display: flex;
     margin-bottom: 20px;
-    position: fixed;
     width: 100%;
     justify-content: space-around;
 }
@@ -17,7 +16,6 @@ body {
 .search-block {
   display: flex;
   align-items: center;
-  position: fixed;
 }
 
 .searchQuery {
@@ -72,7 +70,7 @@ button:hover {
 }
 
 .load-more {
-  /* display: block; */
+  /* display: none; */
   overflow: hidden;
   margin: 0 auto;
   padding: 10px 20px;
@@ -87,7 +85,7 @@ button:hover {
   background-color: rgb(45, 49, 120), 182);
 }
 
-.is-hidden {
+.hidden {
   display: none;
 }
 
