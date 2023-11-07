@@ -15,7 +15,7 @@ axios.defaults.params = {
 const searchForm = document.querySelector('.search-form');
 const gallery = document.querySelector('.gallery');
 const loadMoreBtn = document.querySelector('.load-more');
-loadMoreBtn.style.display = 'none';
+loadMoreBtn.classList.add('is-hidden');
 
 let page = 1; // Початкова сторінка для пагінації
 gallery.innerHTML = '';
@@ -78,7 +78,7 @@ searchForm.addEventListener('submit', async e => {
     alert(
       'Sorry, there are no images matching your search query. Please try again.'
     );
-    loadMoreBtn.style.display = 'none';
+    loadMoreBtn.classList.add('is-hidden');
   }
 });
 
@@ -90,7 +90,7 @@ loadMoreBtn.addEventListener('click', async () => {
     displayImages(images);
     page++; // Переходимо на наступну сторінку для пагінації
   } else {
-    loadMoreBtn.style.display = 'none';
+    loadMoreBtn.classList.add('is-hidden');
     alert("We're sorry, but you've reached the end of search results.");
     selectElement.addEventListener('change', event => {
       const selectedBreedId = event.target.value;

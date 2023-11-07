@@ -73,6 +73,7 @@ button:hover {
 
 .load-more {
   /* display: block; */
+  overflow: hidden;
   margin: 0 auto;
   padding: 10px 20px;
   background-color: #81ec9c;
